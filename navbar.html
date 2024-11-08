@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      background-color: #f4f7fc;
+    }
+
+    .sidebar {
+      width: 250px;
+      height: 100%;
+      background-color: #333;
+      color: white;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+
+    .sidebar-toggle {
+      display: none;
+    }
+
+    .sidebar-close {
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 20px;
+      width: 100%;
+      transition: margin-left 0.3s ease;
+    }
+
+    .hidden-sidebar .sidebar {
+      transform: translateX(-250px);
+    }
+
+    .hidden-sidebar .main-content {
+      margin-left: 0;
+    }
+
+    .sidebar-toggle-btn {
+      font-size: 30px;
+      color: #333;
+      cursor: pointer;
+      margin: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 200px;
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+
+      .sidebar-toggle-btn {
+        display: block;
+      }
+
+      .sidebar-close {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <span class="sidebar-close" onclick="toggleSidebar()">×</span>
+    <h2>Dashboard</h2>
+    <a href="#homepage" id="home" onclick="changeContent('Home')">Home</a>
+    <a href="#" id="profile" onclick="changeContent('Profile')">Profile</a>
+    <a href="#" id="settings" onclick="changeContent('Settings')">Settings</a>
+    <a href="#" id="messages" onclick="changeContent('Messages')">Messages</a>
+    <a href="#" id="logout" onclick="logout()">Log Out</a>
+  </div>
+
+  <section id="homepage" style="height: 100vh; background-color: blue;"> <h1>asdas</h1>  </section>
+
+  <div class="main-content">
+    <span class="sidebar-toggle-btn" onclick="toggleSidebar()">☰</span>
+    <h1>Welcome to the Dashboard</h1>
+    <p id="content">Select a section from the sidebar to view its content.</p>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.body.classList.toggle('hidden-sidebar');
+    }
+
+    // function changeContent(section) {
+    //   const content = document.getElementById('content');
+    //   content.innerHTML = `<h2>${section}</h2><p>This is the ${section} section.</p>`;
+    // }
+
+    function logout() {
+      
+      sessionStorage.clear();
+      localStorage.clear();
+
+      
+      window.location.href = "Form.html";
+    }
+  </script>
+</body>
+</html>

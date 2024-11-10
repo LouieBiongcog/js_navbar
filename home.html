@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sidebar Dashboard</title>
+  <title>Home</title>
   <style>
     * {
       margin: 0;
@@ -98,6 +98,7 @@
       .sidebar-close {
         display: none;
       }
+      
     }
     .main-content {
       margin-left: 250px;
@@ -138,44 +139,7 @@
       font-size: 16px;
       color: #666;
     }
-    .sidebar h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #ffffff;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
 
-    .main-content h1 {
-      font-size: 28px;
-      margin-bottom: 15px;
-      color: #333;
-      text-align: center;
-    }
-
-    .main-content p {
-      font-size: 18px;
-      color: #666;
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .sidebar-toggle-btn {
-      font-size: 30px;
-      color: #333;
-      cursor: pointer;
-      margin: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .sidebar-toggle-btn:hover {
-      transform: scale(1.1);
-    }
-
-    .hidden-sidebar .sidebar {
-      transform: translateX(-250px);
-      transition: transform 0.3s ease;
-    }
   </style>
 </head>
 <body>
@@ -189,9 +153,25 @@
 
   <div class="main-content">
     <span class="sidebar-toggle-btn" onclick="toggleSidebar()">☰</span>
-    <h1>Welcome to the Dashboard</h1>
-    <p id="content">Select a section from the sidebar to view its content.</p>
+    <h1>Welcome !</h1>
+    <div class="dashboard-section">
+      <h2>Overview</h2>
+      <p>Total Logins: 15</p>
+      <p>Last Login: November 1, 2024</p>
+      <p>Account Status: Active</p>
+    </div>
+    <div class="dashboard-section">
+      <h2>Recent Activity</h2>
+      <p>Profile updated - 2 days ago</p>
+      <p>New message from Admin - 3 days ago</p>
+    </div>
+    <div class="dashboard-section">
+      <h2>Notifications</h2>
+      <p>You have 2 new messages</p>
+      <p>System maintenance scheduled for November 15</p>
+    </div>
   </div>
+
 
   <script>
     function toggleSidebar() {

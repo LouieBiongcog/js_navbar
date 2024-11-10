@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sidebar Dashboard</title>
+  <title>profile</title>
   <style>
     * {
       margin: 0;
@@ -111,71 +111,39 @@
 
     .main-content h1 {
       font-size: 28px;
-      margin-bottom: 15px;
       color: #333;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
     }
 
-    .dashboard-section {
+    .profile-section {
       background: linear-gradient(135deg, #e0e7ff, #f4f7fc);
-      padding: 15px;
+      padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       margin-bottom: 15px;
       transition: transform 0.2s ease;
     }
 
-    .dashboard-section:hover {
+    .profile-section:hover {
       transform: translateY(-5px);
     }
 
-    .dashboard-section h2 {
+    .profile-section h2 {
       font-size: 22px;
-      margin-bottom: 10px;
       color: #555;
+      margin-bottom: 10px;
     }
 
-    .dashboard-section p {
+    .profile-section p {
       font-size: 16px;
       color: #666;
+      margin-bottom: 8px;
+      padding-left: 10px;
+      border-left: 3px solid #ccc;
     }
-    .sidebar h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #ffffff;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .main-content h1 {
-      font-size: 28px;
-      margin-bottom: 15px;
-      color: #333;
-      text-align: center;
-    }
-
-    .main-content p {
-      font-size: 18px;
-      color: #666;
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .sidebar-toggle-btn {
-      font-size: 30px;
-      color: #333;
-      cursor: pointer;
-      margin: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .sidebar-toggle-btn:hover {
-      transform: scale(1.1);
-    }
-
-    .hidden-sidebar .sidebar {
-      transform: translateX(-250px);
-      transition: transform 0.3s ease;
-    }
+    
   </style>
 </head>
 <body>
@@ -189,8 +157,18 @@
 
   <div class="main-content">
     <span class="sidebar-toggle-btn" onclick="toggleSidebar()">☰</span>
-    <h1>Welcome to the Dashboard</h1>
-    <p id="content">Select a section from the sidebar to view its content.</p>
+    <h1>User Profile</h1>
+    <div class="profile-section">
+      <h2>Personal Information</h2>
+      <p>Full Name: Raul Makabudbud</p>
+      <p>Birthdate: January 15, 2003</p>
+      <p>Gender: Male</p>
+    </div>
+    <div class="profile-section">
+      <h2>Contact Information</h2>
+      <p>Email: AkosiRaul@gmail.com</p>
+      <p>Phone: 09123456789</p>
+    </div>
   </div>
 
   <script>
